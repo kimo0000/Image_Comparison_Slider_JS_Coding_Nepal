@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Comparison Slider JS | Coding Nepal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="imgs">
+        <div class="img_1"></div>
+        <div class="img_2">
+          <!-- <img src="imgs/tiger.jpg" alt=""> -->
+        </div>
+      </div>
+      <div class="slider">
+        <div class="drag_line">
+          <span></span>
+        </div>
+        <input type="range" min="0" max="100" value="50" />
+      </div>
+    </div>
+
+    <script>
+      const inputRange = document.querySelector('input[type="range"]');
+      const dragLine = document.querySelector(".drag_line");
+      const imageTag = document.querySelector(".img_2");
+      inputRange.addEventListener("input", () => {
+        let rangeValue = inputRange.value;
+        dragLine.style.left = `${rangeValue}%`;
+        imageTag.style.width = `${rangeValue}%`;
+      });
+    </script>
+  </body>
+</html>
